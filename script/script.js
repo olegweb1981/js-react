@@ -22,6 +22,9 @@ for (let i = 0; i < 2; i++) {
         && consumption != '' && cost != '' && consumption.length < 50) {
             console.log("done");
         appData.expenses[consumption] = cost;
+    } else {
+        console.log ("bad result");
+        i--;
     }
 }
 
@@ -29,7 +32,6 @@ for (let i = 0; i < 2; i++) {
 
 // let i = 0;
 // while (i < 2) {
-
 //     let consumption = prompt("Введите обязательную статью расходов в этом месяце", "");
 //     let cost = +prompt("Во сколько обойдется?", "");
 
@@ -37,6 +39,9 @@ for (let i = 0; i < 2; i++) {
 //         && consumption != '' && cost != '' && consumption.length < 50) {
 //             console.log("done");
 //         appData.expenses[consumption] = cost;
+//     } else {
+//         console.log ("bad result");
+//         i--;
 //     }
 
 //     i++;
@@ -44,7 +49,7 @@ for (let i = 0; i < 2; i++) {
 
 // Version thre
 
-// let i = 0;
+let i = 0;
 
 // do {
 //     let consumption = prompt("Введите обязательную статью расходов в этом месяце", "");
@@ -54,6 +59,9 @@ for (let i = 0; i < 2; i++) {
 //         && consumption != '' && cost != '' && consumption.length < 50) {
 //             console.log("done");
 //         appData.expenses[consumption] = cost;
+//     } else {
+//         console.log ("bad result");
+//         i--;
 //     }
 
 //     i++;
