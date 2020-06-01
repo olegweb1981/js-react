@@ -82,20 +82,20 @@ window.addEventListener('DOMContentLoaded', function() {
     });
 
     // Countdown timer
-    let deadline = '2020-05-17';
+    let deadline = '2020-06-01';
 
     function getTimeRemaining(endtime) {
         let t = Date.parse(endtime) - Date.parse(new Date()),
-        seconds = Math.floor((t/1000) % 60),
-        minutes = Math.floor((t/1000/60) % 60),
-        hours = Math.floor((t/(1000*60*60)));
+            seconds = Math.floor((t/1000) % 60),
+            minutes = Math.floor((t/1000/60) % 60),
+            hours = Math.floor((t/(1000*60*60)));
 
         return {
             'total' : t,
             'hours' : hours,
             'minutes' : minutes,
             'seconds' : seconds
-        };
+        }; 
     }
 
     function setClock(id, endtime) {
@@ -114,7 +114,6 @@ window.addEventListener('DOMContentLoaded', function() {
                 } else {
                     return num;
                 }
-                
             }
 
             hours.textContent = addZero(t.hours);
@@ -131,5 +130,31 @@ window.addEventListener('DOMContentLoaded', function() {
     }
 
     setClock('timer', deadline);
+
+    // Modal window
+    let more = document.querySelector('.more'),
+        overlay = document.querySelector('.overlay'),
+        close = document.querySelector('.popup-close');
     
+    more.addEventListener('click', function() {
+        overlay.style.display = 'block';
+        this.classList.add('more-spash');
+        document.body.style.overflow = 'hidden';
+    });
+    close.addEventListener('click', function() {
+        overlay.style.display = 'none';
+        more.classList.remove('more-spash');
+        document.body.style.overflow = '';
+    });
+
+    // Tab modal window
+    let descriptionBtns = document.querySelectorAll('.description-btn');
+
+    for (const descriptionBtn of descriptionBtns) {
+        descriptionBtn.addEventListener('click', function() {
+            overlay.style.display = 'block';
+            this.classList.add('more-spash');
+            document.body.style.overflow = 'hidden';
+        });
+    }
 });
